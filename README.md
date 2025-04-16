@@ -1,68 +1,133 @@
-# 🏡 UK Real Estate Analytics
+# 🏡 UK Real Estate Analytics + Economic Modeling
+
+Welcome to the most comprehensive **Real Estate + Macro-Economic Insight App** ever built for the UK 🇬🇧! This project combines rich transactional property data with macroeconomic indicators to provide powerful predictive insights for investors, policymakers, and data scientists.
+
+---
 
 ## 📑 Project Overview
-This project aims to analyze real estate transaction data from the UK to uncover insights and predict property prices. The data is obtained from the UK Land Registry and processed using Python. The final output is a consolidated and cleaned dataset ready for analysis and modeling.
+
+This project aims to:
+- Analyze real estate transaction data from the UK (1995–2023)
+- Integrate macroeconomic indicators like CPI, GDP, FX rates
+- Predict Log_Price using powerful machine learning models
+- Deploy an interactive analytics app via Streamlit
+
+---
 
 ## 🚀 Key Features
-1. **Data Preprocessing:**
-   - Handles missing values, inconsistent data types, and outliers.
-   - Efficient memory management for large datasets (28 million rows).
 
-2. **Feature Engineering:**
-   - Extracts temporal features: Year, Month, Quarter.
-   - Derives regional information from postal codes.
+### 📊 Interactive Dashboard
+- Built with **Streamlit**
+- Filter by year, macro variable, simulate economic scenarios
+- Correlation heatmaps, distribution plots, model comparison
 
-3. **Data Consolidation:**
-   - Merges large data chunks from Google Cloud Storage (GCS) into a single file.
-   - Saves the consolidated file back to GCS for future analysis.
+### 🔢 Prediction + Modeling
+- Predict Log_Price using:
+  - ✅ CatBoost
+  - ✅ XGBoost
+  - ✅ LightGBM
+- Batch prediction from uploaded CSV
+- SHAP explainability for interpretation
+- Model comparison (MAE, RMSE)
 
-4. **Exploratory Data Analysis (EDA):**
-   - Visualizes property price distribution and type frequency.
-   - Analyzes temporal trends and regional variations.
+### ☁️ Cloud & Scale
+- Load/Save datasets and models from **Google Cloud Storage (GCS)**
+- Handles large datasets (>28M rows) using efficient memory techniques
+
+---
 
 ## 📂 Project Structure
-```
+
+```bash
 UK-RealEstate-Analytics/
 ├── notebooks/
 │   ├── 01_data_exploration.ipynb
 │   ├── 01b_data_preparation.ipynb
-├── scripts/
-│   └── 02_data_preparation.py
+├── app/
+│   └── streamlit_macro_dashboard_v2.py  # Streamlit app
 ├── data/
-│   ├── raw/
-│   └── processed/
+│   └── merged_real_estate_macro.parquet
+├── models/
+│   ├── CatBoost_model.cbm
+│   ├── XGBoost_model.json
+│   ├── LightGBM_model.pkl
+│   └── feature_names.json
+├── .streamlit/config.toml               # UI tweaks
+├── Dockerfile (optional deploy)
 ├── README.md
 └── requirements.txt
 ```
 
-## 🛠️ Requirements
+---
+
+## ⚙️ Requirements
+
 - Python 3.8+
-- Google Cloud SDK
-- Libraries:
-  - pandas
-  - google-cloud-storage
-  - matplotlib
-  - seaborn
+- Google Cloud SDK (for GCS operations)
+
+### Python Libraries
+```bash
+pandas
+streamlit
+matplotlib
+seaborn
+scikit-learn
+catboost
+xgboost
+lightgbm
+google-cloud-storage
+shap
+```
+
+---
 
 ## 💻 Usage
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Boothill2001/UK-RealEstate-Analytics.git
-   ```
 
-2. Install the required packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+# 1. Clone the repo
+https://github.com/Boothill2001/UK-RealEstate-Analytics.git
 
-3. Run the data preparation script:
-   ```bash
-   python scripts/02_data_preparation.py
-   ```
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run Streamlit app
+cd app
+streamlit run streamlit_macro_dashboard_v2.py
+```
+
+---
+
+## 📸 App Preview
+![Preview](screenshots/streamlit_preview.png)
+
+---
+
+## 🧠 AI & Economics Combo
+This project is tailored for:
+- Aspiring **Data Scientists** (especially Economic/Policy-oriented)
+- Researchers & Academics studying housing markets
+- ML Engineers looking to build end-to-end GCP-integrated pipelines
+
+---
 
 ## 📝 Contributions
-Feel free to contribute to this project by opening issues and pull requests.
+Open issues or submit pull requests – happy to collaborate!
 
-## 📧 Contact
-For any inquiries, please contact: boothill2001.grant@gmail.com
+---
 
+## 📫 Contact
+📧 boothill2001.grant@gmail.com  
+🌐 [LinkedIn](https://www.linkedin.com/in/nguyenminhtri-datascience/)  
+🐙 GitHub: [Boothill2001](https://github.com/Boothill2001)
+
+---
+
+## 📌 Upcoming Improvements
+- ✅ Integrate SHAP + batch prediction ✔️
+- 📊 Add advanced time-series forecast (Prophet, ARIMA, LSTM)
+- 🌍 Extend macro sources beyond UK (e.g., EU-wide data)
+- 🚀 Deploy using Streamlit Cloud or GCP Cloud Run
+
+---
+
+> Made with 💡 by Boothill2001

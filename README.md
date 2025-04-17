@@ -1,50 +1,60 @@
 # 🏡 UK Real Estate Analytics + Economic Modeling
 
-Welcome to the most comprehensive **Real Estate + Macro-Economic Insight App** ever built for the UK 🇬🇧! This project combines rich transactional property data with macroeconomic indicators to provide powerful predictive insights for investors, policymakers, and data scientists.
+Welcome to the most advanced **Real Estate + Macro-Economic Insight System** for the UK 🇬🇧! This project goes beyond prediction — it empowers analysts, investors, and policymakers with forecasting, simulation, and explainability tools that combine housing data with economic indicators.
 
 ---
 
 ## 📑 Project Overview
-
 This project aims to:
-- Analyze real estate transaction data from the UK (1995–2023)
-- Integrate macroeconomic indicators like CPI, GDP, FX rates
-- Predict Log_Price using powerful machine learning models
-- Deploy an interactive analytics app via Streamlit
+
+- Analyze UK real estate transaction data (1995–2023)
+- Integrate macroeconomic indicators (GDP, CPI, interest rate, FX, etc.)
+- Predict property prices using state-of-the-art ML models
+- Explain predictions with SHAP/LIME
+- Simulate economic scenarios: "What if inflation increases by 2%?"
+- Deploy a full-stack Streamlit app with cloud-hosted models & monitoring
 
 ---
 
 ## 🚀 Key Features
 
-### 📊 Interactive Dashboard
-- Built with **Streamlit**
-- Filter by year, macro variable, simulate economic scenarios
-- Correlation heatmaps, distribution plots, model comparison
+### 📊 Interactive Dashboard (Streamlit)
+- Filter by year and macroeconomic variable
+- Visualize trends, distributions, correlations
+- Run predictive simulations with custom macro inputs
+- Batch prediction via uploaded CSVs
 
-### 🔢 Prediction + Modeling
-- Predict Log_Price using:
+### 🔢 Machine Learning Models
+- Trained & compared:
   - ✅ CatBoost
   - ✅ XGBoost
   - ✅ LightGBM
-- Batch prediction from uploaded CSV
-- SHAP explainability for interpretation
-- Model comparison (MAE, RMSE)
+- SHAP explainability integrated
+- MAE/RMSE comparison dashboard
 
-### ☁️ Cloud & Scale
-- Load/Save datasets and models from **Google Cloud Storage (GCS)**
-- Handles large datasets (>28M rows) using efficient memory techniques
+### 🧠 Economic Intelligence
+- Elasticity analysis (e.g., how much prices change with GDP variation)
+- Scenario simulation (interest rate hike, recession modeling)
+- Explainable AI with SHAP summary & waterfall
+
+### ☁️ Cloud-Ready & Scalable
+- Data & models stored on Google Cloud Storage (GCS)
+- Auto-download model when missing
+- Efficient `.parquet` storage (28M+ rows)
+- Streamlit Cloud or GCP Cloud Run deployable
 
 ---
 
 ## 📂 Project Structure
-
-```bash
+```
 UK-RealEstate-Analytics/
 ├── notebooks/
 │   ├── 01_data_exploration.ipynb
 │   ├── 01b_data_preparation.ipynb
+│   ├── 02_Feature_Engineering_*.ipynb
+│   ├── 03_Modeling_*.ipynb
 ├── app/
-│   └── streamlit_macro_dashboard_v2.py  # Streamlit app
+│   └── streamlit_macro_dashboard.py   # Streamlit app with SHAP + Simulation
 ├── data/
 │   └── merged_real_estate_macro.parquet
 ├── models/
@@ -52,82 +62,68 @@ UK-RealEstate-Analytics/
 │   ├── XGBoost_model.json
 │   ├── LightGBM_model.pkl
 │   └── feature_names.json
-├── .streamlit/config.toml               # UI tweaks
-├── Dockerfile (optional deploy)
-├── README.md
-└── requirements.txt
+├── requirements.txt
+├── Dockerfile (optional)
+└── README.md
 ```
 
 ---
 
 ## ⚙️ Requirements
-
 - Python 3.8+
-- Google Cloud SDK (for GCS operations)
-
-### Python Libraries
+- Google Cloud SDK (if using GCS)
+- Install with:
 ```bash
-pandas
-streamlit
-matplotlib
-seaborn
-scikit-learn
-catboost
-xgboost
-lightgbm
-google-cloud-storage
-shap
+pip install -r requirements.txt
 ```
 
 ---
 
-## 💻 Usage
-
+## 💻 How to Run
 ```bash
 # 1. Clone the repo
 https://github.com/Boothill2001/UK-RealEstate-Analytics.git
 
-# 2. Install dependencies
-pip install -r requirements.txt
+# 2. Move to app directory
+cd app
 
 # 3. Run Streamlit app
-cd app
-streamlit run streamlit_macro_dashboard_v2.py
+streamlit run streamlit_macro_dashboard.py
 ```
 
 ---
 
-## 📸 App Preview
-![Preview](screenshots/streamlit_preview.png)
+## 📸 App Preview (coming soon)
+- SHAP explainability bar chart
+- Price vs. macroeconomic trends
+- Batch prediction & scenario sliders
 
 ---
 
-## 🧠 AI & Economics Combo
-This project is tailored for:
-- Aspiring **Data Scientists** (especially Economic/Policy-oriented)
-- Researchers & Academics studying housing markets
-- ML Engineers looking to build end-to-end GCP-integrated pipelines
+## 🧠 Who Is This For?
+- Aspiring Data Scientists (especially Economic / Policy-focused)
+- Researchers studying housing & macroeconomic dynamics
+- ML Engineers looking for GCP-integrated E2E pipelines
+
+---
+
+## 🔧 Upcoming Features
+- [ ] Time Series Forecasting (Prophet, ARIMA, LSTM)
+- [ ] MLflow integration (for experiment tracking)
+- [ ] Economic Drift Monitoring with Evidently
+- [ ] Streamlit Cloud / GCP Cloud Run deploy
+- [ ] LIME & SHAP waterfall visualization
 
 ---
 
 ## 📝 Contributions
 Open issues or submit pull requests – happy to collaborate!
 
----
-
 ## 📫 Contact
-📧 boothill2001.grant@gmail.com  
-🌐 [LinkedIn](https://www.linkedin.com/in/nguyenminhtri-datascience/)  
-🐙 GitHub: [Boothill2001](https://github.com/Boothill2001)
+- Email: boothill2001.grant@gmail.com
+- GitHub: [@Boothill2001](https://github.com/Boothill2001)
+- LinkedIn: *(coming soon – link here)*
 
 ---
 
-## 📌 Upcoming Improvements
-- ✅ Integrate SHAP + batch prediction ✔️
-- 📊 Add advanced time-series forecast (Prophet, ARIMA, LSTM)
-- 🌍 Extend macro sources beyond UK (e.g., EU-wide data)
-- 🚀 Deploy using Streamlit Cloud or GCP Cloud Run
-
----
-
-> Made with 💡 by Boothill2001
+Made with 💡, GCS, and many cups of ☕ by **Boothill2001**
